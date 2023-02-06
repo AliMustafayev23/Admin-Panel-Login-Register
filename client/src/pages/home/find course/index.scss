@@ -1,0 +1,106 @@
+#findCourse {
+  background-image: url("https://preview.colorlib.com/theme/university/images/big_image_2.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  height: 90vh;
+  background-attachment: fixed;
+  .findCourse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    color: white;
+    animation-name: slideUp;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    .findCourseTitle {
+      font-size: 40px;
+      font-weight: 100;
+      font-family: "Rubik", arial, sans-serif;
+    }
+    .searchSide {
+      padding: 20px;
+      background-color: white;
+      font-family: "Rubik", arial, sans-serif;
+      color: #808080;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 40px;
+      input {
+        padding: 6px 32px;
+        border-style: none;
+        outline: none;
+        border-right: 0.1px solid #c5bebe;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      #categoryCourse {
+        border-right: 0.1px solid #c5bebe;
+      }
+      select {
+        padding: 6px 32px;
+        color: #808080;
+        background-color: white;
+        border-style: none;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 400;
+        option {
+          padding: 5px;
+        }
+      }
+      .search {
+        padding: 6px 32px;
+        background-color: #11cbd7;
+        border-radius: 0.25rem;
+        border-color: transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        &:hover {
+          background-color: transparent;
+          border-color: #0d0d0d;
+          color: #0d0d0d;
+        }
+      }
+    }
+    .weHave {
+      font-size: 16px;
+      font-family: "Rubik", arial, sans-serif;
+      font-weight: 300 px;
+    }
+    .registerNow {
+      color: white;
+      cursor: pointer;
+      background-color: #11cbd7;
+      border-color: transparent;
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 16px 48px;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: transparent;
+        border-color: white;
+      }
+    }
+  }
+}
+@keyframes slideUp {
+  0%,
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
