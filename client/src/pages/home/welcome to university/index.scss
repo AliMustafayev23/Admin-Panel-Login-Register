@@ -1,0 +1,65 @@
+#welcomeUniversity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .welcomeUniversity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    .welcomeUniversityLeft {
+      width: 540px;
+      height: 327.38px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      .welcomeUniversityTitle {
+        font-size: 45px;
+        color: #11cbd7;
+      }
+      p {
+        font-size: 16px;
+        color: #808080;
+      }
+      .readMore {
+        cursor: pointer;
+        background-color: #11cbd7;
+        color: white;
+        padding: 8px 24px;
+        border-color: transparent;
+        width: 129.59px;
+        height: 43.2px;
+        font-size: 15px;
+        border-radius: 0.25rem;
+        &:hover {
+          color: #474747;
+          border-color: #11cbd7;
+          background-color: transparent;
+        }
+      }
+    }
+    .welcomeUniversityRight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 540px;
+      height: 327.38px;
+      background-image: url("https://preview.colorlib.com/theme/university/images/img_1.jpg");
+      a {
+        text-decoration: none;
+        i {
+          background-color: white;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #11cbd7;
+        }
+      }
+    }
+  }
+}

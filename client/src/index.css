@@ -3,8 +3,22 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Rubik", arial, sans-serif;
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+@keyframes slideUp {
+  0%,
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

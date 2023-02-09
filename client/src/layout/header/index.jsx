@@ -72,7 +72,7 @@ const Header = () => {
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
                   Courses
-                  <DownOutlined />
+                  <i className="fa-solid fa-sort-down"></i>
                 </Space>
               </a>
             </Dropdown>
@@ -84,7 +84,7 @@ const Header = () => {
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
                   Catagories
-                  <DownOutlined />
+                  <i className="fa-solid fa-sort-down"></i>
                 </Space>
               </a>
             </Dropdown>

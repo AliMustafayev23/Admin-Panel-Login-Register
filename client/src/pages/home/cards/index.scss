@@ -1,0 +1,55 @@
+#cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+  padding-bottom: 80px;
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 240px;
+      height: 299.6px;
+      img {
+        width: 60px;
+        height: 60.4px;
+      }
+      .cardTitle {
+        font-size: 20px;
+        color: #000000;
+      }
+      p {
+        color: #808080;
+        font-size: 16px;
+      }
+      .cardReadMore {
+        font-size: 13px;
+        color: #11cbd7;
+        text-decoration: none;
+        display: flex;
+        column-gap: 10px;
+        i {
+          position: relative;
+        }
+        &:hover {
+          i {
+            animation: arrow 2s ease-in-out infinite;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0px, 0);
+  }
+
+  100% {
+    transform: translate(10px, 0);
+  }
+}
