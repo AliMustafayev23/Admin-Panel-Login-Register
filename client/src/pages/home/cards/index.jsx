@@ -7,7 +7,7 @@ import "./index.scss";
 const Cards = () => {
   return (
     <div id="cards">
-      <div className="container">
+      <div className="container2">
         <div className="cards">
           <div className="card">
             <img src={card1} alt="" />

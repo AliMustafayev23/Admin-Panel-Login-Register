@@ -1,0 +1,46 @@
+#popularCourse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  .popularCourse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 10px;
+    h1 {
+      font-size: 45px;
+      color: #11cbd7;
+    }
+    p {
+      font-size: 16px;
+      color: #808080;
+    }
+    .enroll {
+      background-color: #11cbd7;
+      border: 1px solid #11cbd7;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+      padding: 8px 24px;
+      border-color: transparent;
+      width: 125.59px;
+      height: 43.2px;
+      border-radius: 0.25rem;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px;
+      &:hover {
+        color: #474747;
+        border-color: #11cbd7;
+        background-color: transparent;
+      }
+    }
+  }
+}

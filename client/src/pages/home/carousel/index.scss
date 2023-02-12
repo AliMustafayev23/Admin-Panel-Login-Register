@@ -1,0 +1,45 @@
+.carousel {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  .courseCard {
+    text-align: left;
+    // width: 440px;
+    // height: 520px;
+    h1 {
+      color: black;
+      &:hover {
+        color: #11cbd7;
+      }
+    }
+    p {
+      font-size: 16px;
+      color: #808080;
+    }
+    .courseCardEnd {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .members {
+        color: #11cbd7;
+      }
+      .price {
+        background-color: #11cbd7;
+        color: white;
+        width: 51px;
+        height: 34px;
+        padding: 1px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+      }
+    }
+
+    img {
+      // width: 100%;
+      height: 250px;
+      width: 440px;
+    }
+  }
+}

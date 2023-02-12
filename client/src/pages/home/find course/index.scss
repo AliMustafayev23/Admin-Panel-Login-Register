@@ -15,8 +15,8 @@
     row-gap: 20px;
     color: white;
     animation-name: slideUp;
-    animation-duration: 3s;
-    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-timing-function: linear;
     .findCourseTitle {
       font-size: 40px;
       font-weight: 100;
@@ -78,7 +78,9 @@
     .registerNow {
       color: white;
       cursor: pointer;
+      text-decoration: none;
       background-color: #11cbd7;
+      border: 1px solid black;
       border-color: transparent;
       font-size: 1rem;
       font-weight: 400;
@@ -86,6 +88,7 @@
       border-radius: 0.25rem;
       &:hover {
         background-color: transparent;
+
         border-color: white;
       }
     }

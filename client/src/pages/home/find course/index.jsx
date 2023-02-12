@@ -28,7 +28,7 @@ const FindCourse = () => {
           <p className="weHave">
             We have more than 500 courses to improve your skills
           </p>
-          <button className="registerNow">Register Now</button>
+          <a className="registerNow">Register Now</a>
         </div>
       </div>
     </div>

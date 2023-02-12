@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     column-gap: 20px;
+
     .welcomeUniversityLeft {
       width: 540px;
       height: 327.38px;
@@ -27,9 +28,10 @@
         cursor: pointer;
         background-color: #11cbd7;
         color: white;
+        border: 1px solid black;
         padding: 8px 24px;
         border-color: transparent;
-        width: 129.59px;
+        width: 75.59px;
         height: 43.2px;
         font-size: 15px;
         border-radius: 0.25rem;

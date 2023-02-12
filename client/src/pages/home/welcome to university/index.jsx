@@ -3,7 +3,7 @@ import "./index.scss";
 const WelcomeUniversity = () => {
   return (
     <div id="welcomeUniversity">
-      <div className="container">
+      <div className="container2">
         <div className="welcomeUniversity">
           <div className="welcomeUniversityLeft">
             <h2 className="welcomeUniversityTitle">
@@ -17,7 +17,7 @@ const WelcomeUniversity = () => {
               <br />
               beatae asperiores doloribus animi.
             </p>
-            <button className="readMore">Read More</button>
+            <a className="readMore">Read More</a>
           </div>
           <div className="welcomeUniversityRight">
             <a href="https://vimeo.com/45830194">

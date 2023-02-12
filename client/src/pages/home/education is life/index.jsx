@@ -42,7 +42,7 @@ const EducationIsLife = () => {
 
   return (
     <div id="education">
-      <div className="container">
+      <div className="container2">
         <div className="education">
           <div className="educationLeft">
             <img

@@ -9,11 +9,26 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+.container2 {
+  padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.container2.active {
+  transform: translateY(0);
+  opacity: 1;
+}
 @keyframes slideUp {
   0%,
   50% {
-    transform: translateY(100%);
+    position: relative;
+    transform: translateY(150px);
     opacity: 0;
+    transition: 1s all ease;
   }
 
   60%,
