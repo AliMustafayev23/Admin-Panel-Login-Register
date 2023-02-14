@@ -1,0 +1,46 @@
+#createWebsite {
+  background-color: #11cbd7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  .createWebsite {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 100px;
+    .createWebsite-right {
+      background-color: white;
+      padding: 5px;
+      width: 540px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      input {
+        border-style: none;
+        outline: none;
+      }
+      .subscribe {
+        padding: 6px 32px;
+        background-color: #11cbd7;
+        border-radius: 0.25rem;
+        border-color: transparent;
+        height: 39.2px;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        &:hover {
+          background-color: transparent;
+          border-color: #0d0d0d;
+          color: #0d0d0d;
+        }
+      }
+    }
+  }
+}

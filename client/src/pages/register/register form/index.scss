@@ -1,0 +1,54 @@
+#registerForm {
+  display: flex;
+
+  flex-direction: column;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #808080;
+  .registerForm {
+    display: flex;
+    position: relative;
+    bottom: 50px;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+    padding: 60px;
+    width: 520px;
+    font-size: 16px;
+    color: #808080;
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 32px;
+      color: black;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      input {
+        padding: 8px 12px;
+        // border-color: #808080;
+        outline-color: #11cbd7;
+      }
+      .login {
+        margin-top: 20px;
+        padding: 8px 48px;
+        background-color: #11cbd7;
+        border-radius: 0.25rem;
+        border-color: transparent;
+        width: 140.35px;
+        height: 43.2px;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        &:hover {
+          background-color: transparent;
+          border-color: #0d0d0d;
+          color: #0d0d0d;
+        }
+      }
+    }
+  }
+}

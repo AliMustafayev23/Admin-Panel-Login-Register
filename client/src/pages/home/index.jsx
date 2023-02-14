@@ -1,4 +1,5 @@
 import React from "react";
+import CreateCoolWebsite from "../../components/create cool website";
 import Cards from "./cards";
 import CourseCarousel from "./carousel";
 import EducationIsLife from "./education is life";
@@ -34,6 +35,7 @@ const Home = () => {
       <PopularCourses />
       <CourseCarousel />
       <Teachers />
+      <CreateCoolWebsite />
     </div>
   );
 };

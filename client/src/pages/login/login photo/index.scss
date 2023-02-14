@@ -1,0 +1,35 @@
+#loginPhoto {
+  background-image: url("https://preview.colorlib.com/theme/university/images/big_image_2.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 80vh;
+  color: white;
+  font-size: 16px;
+  .loginPhoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      font-size: 60px;
+    }
+    .backHome {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px;
+      a {
+        text-decoration: none;
+        color: #11cbd7;
+
+        &:hover {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
