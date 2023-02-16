@@ -3,13 +3,16 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import morgan from "morgan";
 import courseRoutes from "./routes/course.js";
+import studentRouter from "./routes/student.js";
 const app = express();
 dotenv.config();
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(morgan("dev")),
+  app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-
+app.use("/students", studentRouter);
 app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
