@@ -1,8 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import "./index.scss";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const categories = [
@@ -55,6 +58,49 @@ const Header = () => {
       type: "divider",
     },
   ];
+  const profileDropdown = [
+    {
+      label: <button onClick={() => logOut()}>Log Out</button>,
+      key: "0",
+    },
+    {
+      type: "divider",
+    },
+  ];
+  const [login, setLogin] = useState(false);
+  let student = JSON.parse(localStorage.getItem("student"));
+
+  const [profile, setProfile] = useState();
+  console.log(student);
+  useEffect(() => {
+    if (student) {
+      setProfile(student);
+      setLogin(true);
+    }
+  }, []);
+  const logOut = () => {
+    setLogin(false);
+    localStorage.removeItem("student");
+  };
+  let a = (
+    <div className="loginAndRegister">
+      <Link to={"/login"}>Login</Link>/<Link to={"/register"}>Register</Link>
+    </div>
+  );
+  let b = (
+    <Dropdown
+      menu={{
+        items: profileDropdown,
+      }}
+    >
+      <a onClick={(e) => e.preventDefault()}>
+        <Space>
+          {student?.result.username}
+          <i className="fa-solid fa-sort-down"></i>
+        </Space>
+      </a>
+    </Dropdown>
+  );
   return (
     <div id="header">
       <div className="container">
@@ -92,10 +138,7 @@ const Header = () => {
             <NavLink to={"/about"}>About</NavLink>
             <NavLink to={"/contact"}>Contact</NavLink>
           </nav>
-          <div className="loginAndRegister">
-            <Link to={"/login"}>Login</Link>/
-            <Link to={"/register"}>Register</Link>
-          </div>
+          {login ? b : a}
         </div>
       </div>
     </div>
