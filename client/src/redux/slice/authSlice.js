@@ -16,6 +16,22 @@ export const login = createAsyncThunk(
     }
   }
 );
+export const register = createAsyncThunk(
+  "auth/register",
+  async ({ values, navigate, toast }) => {
+    try {
+      const response = await api.signUp(values);
+      const registerSucess = () => toast.success("Register successfully");
+      registerSucess();
+      navigate("/");
+      return response.data;
+    } catch (error) {
+      const err = () => toast.error("You have problem");
+      err();
+      console.log(error);
+    }
+  }
+);
 const authSlice = createSlice({
   name: "auth",
   initialState: {
@@ -33,6 +49,18 @@ const authSlice = createSlice({
       state.student = action.payload;
     },
     [login.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+    [register.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [register.fulfilled]: (state, action) => {
+      state.loading = false;
+      localStorage.setItem("student", JSON.stringify({ ...action.payload }));
+      state.student = action.payload;
+    },
+    [register.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },

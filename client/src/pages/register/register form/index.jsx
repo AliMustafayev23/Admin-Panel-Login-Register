@@ -2,14 +2,25 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import "./index.scss";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { register } from "../../../redux/slice/authSlice";
 const registerSchema = Yup.object().shape({
-  userName: Yup.string()
+  username: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
+  // password: Yup.string().password("Invalid password").required("Required"),
+  // retypePassword: Yup.string()
+  //   .password("Invalid password")
+  //   .required("Required"),
 });
 const RegisterForm = () => {
+  const passwordErr = () => toast.warning("Password should match");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <div id="registerForm">
       <div className="container">
@@ -18,13 +29,18 @@ const RegisterForm = () => {
           <Formik
             initialValues={{
               email: "",
-              userName: "",
+              username: "",
               password: "",
               retypePassword: "",
             }}
             validationSchema={registerSchema}
             onSubmit={(values) => {
-              console.log(values);
+              if (values.password !== values.retypePassword) {
+                passwordErr();
+              }
+              if (values.email && values.password) {
+                dispatch(register({ values, navigate, toast }));
+              }
             }}
           >
             {({ errors, touched }) => (
@@ -35,9 +51,9 @@ const RegisterForm = () => {
                   <div>{errors.email}</div>
                 ) : null}
                 <label for="username">Username:</label>
-                <Field name="userName" />
-                {errors.userName && touched.userName ? (
-                  <div>{errors.userName}</div>
+                <Field name="username" />
+                {errors.username && touched.username ? (
+                  <div>{errors.username}</div>
                 ) : null}
                 <label for="password">Password:</label>
                 <Field name="password" type="password" />

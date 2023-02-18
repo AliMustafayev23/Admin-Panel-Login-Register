@@ -69,7 +69,8 @@ const Header = () => {
   ];
   const [login, setLogin] = useState(false);
   let student = JSON.parse(localStorage.getItem("student"));
-
+  let student2 = useSelector((state) => state.auth.student?.result);
+  console.log("student2", student2);
   const [profile, setProfile] = useState();
   console.log(student);
   useEffect(() => {
@@ -95,7 +96,7 @@ const Header = () => {
     >
       <a onClick={(e) => e.preventDefault()}>
         <Space>
-          {student?.result.username}
+          {student?.result?.username}
           <i className="fa-solid fa-sort-down"></i>
         </Space>
       </a>
