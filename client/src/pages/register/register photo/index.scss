@@ -13,6 +13,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    animation-name: slideUp;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
     h1 {
       font-size: 60px;
     }

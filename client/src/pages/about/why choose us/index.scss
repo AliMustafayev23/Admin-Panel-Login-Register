@@ -1,0 +1,118 @@
+#whyChooseUs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .whyChooseUs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .whyChooseUs-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      width: 80%;
+      h1 {
+        font-size: 45px;
+        color: #11cbd7;
+      }
+      p {
+        color: #808080;
+        font-size: 16px;
+      }
+    }
+    .whyChooseUsTextAndImage {
+      padding-top: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .outstandingFacilitiesForMobile {
+        display: none;
+      }
+      .excellenTeachers,
+      .outstandingFacilities,
+      .worldClassEducation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 80%;
+        }
+        .text {
+          color: #808080;
+          width: 50%;
+          display: flex;
+          padding-left: 10%;
+          padding-right: 10%;
+          justify-content: center;
+          flex-direction: column;
+          i {
+            font-size: 13px;
+            color: #cccccc;
+          }
+          h1 {
+            color: black;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  #whyChooseUs {
+    .whyChooseUs {
+      .whyChooseUsTextAndImage {
+        .outstandingFacilitiesForMobile {
+          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          row-gap: 10px;
+          img {
+            width: 80%;
+          }
+          .text {
+            color: #808080;
+            width: 80%;
+            display: flex;
+            padding-left: 10%;
+            padding-right: 10%;
+            justify-content: center;
+            flex-direction: column;
+            i {
+              font-size: 13px;
+              color: #cccccc;
+            }
+            h1 {
+              color: black;
+            }
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+        .outstandingFacilities {
+          display: none;
+        }
+        .excellenTeachers,
+        .worldClassEducation {
+          flex-direction: column;
+          row-gap: 10px;
+          .text {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}

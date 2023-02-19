@@ -1,0 +1,45 @@
+#companyHistory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .companyHistory {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 100px;
+    .companyHistory-left {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      p {
+        font-size: 16px;
+        color: #808080;
+      }
+      h1 {
+        font-size: 45px;
+        color: #11cbd7;
+      }
+    }
+    img {
+      width: 540px;
+      height: 320px;
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  #companyHistory {
+    flex-direction: column;
+    .companyHistory {
+      flex-direction: column;
+      row-gap: 20px;
+      .companyHistory-left,
+      img {
+        width: 80%;
+        height: 30%;
+      }
+    }
+  }
+}

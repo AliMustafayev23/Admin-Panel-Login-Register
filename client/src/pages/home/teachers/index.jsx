@@ -5,11 +5,13 @@ const Teachers = () => {
     <div id="teachers">
       <div className="container2">
         <div className="teachers">
-          <h1>Teachers</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            qui neque sint eveniet <br /> tempore sapiente.
-          </p>
+          <div className="teachers-header">
+            <h1>Teachers</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              qui neque sint eveniet <br /> tempore sapiente.
+            </p>
+          </div>
           <div className="teacherCards">
             <div class="teacher-card">
               <div class="teacher-card-inner">

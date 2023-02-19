@@ -37,10 +37,10 @@ const Footer = () => {
                 <i className="fa-solid fa-location-dot"></i>203 Fake St.
                 Mountain View, San Francisco, California, USA
               </p>
-              <p>
+              <p className="contact-telephone">
                 <i className="fa-solid fa-phone"></i>+2 392 3929 210
               </p>
-              <p>
+              <p className="contact-email">
                 <i className="fa-solid fa-envelope"></i>info@yourdomain.com
               </p>
               <p>

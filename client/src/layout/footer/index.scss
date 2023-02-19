@@ -10,6 +10,17 @@
       justify-content: flex-start;
       column-gap: 20px;
       .contact {
+        color: #808080;
+        .contact-telephone,
+        .contact-email {
+          color: #11cbd7;
+          i {
+            color: #808080;
+          }
+        }
+        h2 {
+          color: black;
+        }
         p {
           display: flex;
           column-gap: 10px;
@@ -42,6 +53,34 @@
                 color: #228a93;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  #footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 40px;
+      .footer-middle {
+        flex-direction: column;
+        .footer-middle-second {
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          .footer-middle-second-down {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 5px;
           }
         }
       }

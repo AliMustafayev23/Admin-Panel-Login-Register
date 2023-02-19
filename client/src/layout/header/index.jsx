@@ -72,7 +72,6 @@ const Header = () => {
   let student2 = useSelector((state) => state.auth.student?.result);
   console.log("student2", student2);
   const [profile, setProfile] = useState();
-  console.log(student);
   useEffect(() => {
     if (student) {
       setProfile(student);
@@ -102,6 +101,7 @@ const Header = () => {
       </a>
     </Dropdown>
   );
+
   return (
     <div id="header">
       <div className="container">

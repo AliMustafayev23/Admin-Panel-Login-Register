@@ -1,0 +1,112 @@
+#contact-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .contact-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 100px;
+    .message {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      color: #808080;
+      .message-up {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+        .name,
+        .phone,
+        .email {
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+          input {
+            padding: 8px 12px;
+            outline-color: #11cbd7;
+          }
+        }
+      }
+      .writeMessage {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        textarea {
+          padding: 8px 12px;
+          outline-color: #11cbd7;
+          height: 209.6px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+      .sendMessage {
+        padding: 6px 12px;
+        background-color: #11cbd7;
+        border-radius: 0.25rem;
+        border-color: transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        width: 134.54px;
+        height: 39.2px;
+        &:hover {
+          background-color: transparent;
+          border-color: #11cbd7;
+          color: #0d0d0d;
+        }
+      }
+    }
+    .contact-information {
+      width: 50%;
+      color: #808080;
+      .contact-telephone,
+      .contact-email {
+        color: #11cbd7;
+        i {
+          color: #808080;
+        }
+      }
+      h2 {
+        color: black;
+      }
+      p {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  #contact-message {
+    flex-direction: column;
+    .contact-message {
+      flex-direction: column;
+      row-gap: 70px;
+      .message {
+        .message-up {
+          column-gap: 0;
+          flex-direction: column;
+          .name,
+          .phone,
+          .email {
+            input {
+              width: 100%;
+            }
+          }
+        }
+        .writeMessage {
+          textarea {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -44,3 +44,16 @@
     }
   }
 }
+@media only screen and (max-width: 992px) {
+  #createWebsite {
+    flex-direction: column;
+    row-gap: 20px;
+    .createWebsite {
+      flex-direction: column;
+      .createWebsite-right,
+      .createWebsite-text {
+        width: 80%;
+      }
+    }
+  }
+}

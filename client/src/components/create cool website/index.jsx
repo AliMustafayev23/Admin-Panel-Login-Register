@@ -4,7 +4,7 @@ const CreateCoolWebsite = () => {
   return (
     <div id="createWebsite">
       <div className="createWebsite">
-        <div className="fcreateWebsite-text">
+        <div className="createWebsite-text">
           <h1>Create cool websites</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi

@@ -10,10 +10,27 @@
     justify-content: center;
     flex-direction: column;
     row-gap: 20px;
+    .teachers-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      width: 80%;
+      h1 {
+        font-size: 45px;
+        color: #11cbd7;
+      }
+      p {
+        color: #808080;
+        font-size: 16px;
+      }
+    }
     .teacherCards {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-top: 50px;
       column-gap: 30px;
       height: 30%;
       .teacher-card {
@@ -99,6 +116,25 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  #teachers {
+    .teachers {
+      .teacherCards {
+        flex-direction: column;
+        row-gap: 20px;
+        .teacherCard {
+          width: 100px;
+          height: 200px;
+          .teacher-card-front,
+          .teacher-card-back {
+            width: 80%;
+            height: 80%;
           }
         }
       }
