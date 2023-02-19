@@ -68,6 +68,7 @@ const Header = () => {
     },
   ];
   const [login, setLogin] = useState(false);
+  const [menuBar, setMenuBar] = useState(false);
   let student = JSON.parse(localStorage.getItem("student"));
   let student2 = useSelector((state) => state.auth.student?.result);
   console.log("student2", student2);
@@ -78,6 +79,15 @@ const Header = () => {
       setLogin(true);
     }
   }, []);
+  const openBar = () => {
+    if (menuBar == false) {
+      setMenuBar(true);
+    }
+    if (menuBar == true) {
+      setMenuBar(false);
+    }
+  };
+  console.log(menuBar);
   const logOut = () => {
     setLogin(false);
     localStorage.removeItem("student");
@@ -109,6 +119,40 @@ const Header = () => {
           <Link to={"/"} className="university">
             UNIVERSITY
           </Link>
+          <nav>
+            <NavLink to={"/"}>Home</NavLink>
+            <Dropdown
+              menu={{
+                items: courses,
+              }}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  Courses
+                  <i className="fa-solid fa-sort-down"></i>
+                </Space>
+              </a>
+            </Dropdown>
+            <Dropdown
+              menu={{
+                items: categories,
+              }}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  Catagories
+                  <i className="fa-solid fa-sort-down"></i>
+                </Space>
+              </a>
+            </Dropdown>
+            <NavLink to={"/blog"}>Blog</NavLink>
+            <NavLink to={"/about"}>About</NavLink>
+            <NavLink to={"/contact"}>Contact</NavLink>
+          </nav>
+          {login ? b : a}
+          <i className="fa-solid fa-bars fa-2x" onClick={() => openBar()}></i>
+        </div>
+        <div className={menuBar ? "header-down" : "header-down-none"}>
           <nav>
             <NavLink to={"/"}>Home</NavLink>
             <Dropdown
