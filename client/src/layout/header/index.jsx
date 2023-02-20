@@ -5,9 +5,26 @@ import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setLogout } from "../../redux/slice/authSlice";
+import { Button, Modal } from "antd";
 const Header = () => {
+  const dispatch = useDispatch();
+  const { student } = useSelector((state) => ({ ...state.auth }));
+  const logOut = () => {
+    dispatch(setLogout());
+  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+    logOut();
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   const categories = [
     {
       label: <Link to={"/categories/html"}>HTML</Link>,
@@ -60,25 +77,20 @@ const Header = () => {
   ];
   const profileDropdown = [
     {
-      label: <button onClick={() => logOut()}>Log Out</button>,
+      label: (
+        <button className="logOut" onClick={showModal}>
+          Log Out
+        </button>
+      ),
       key: "0",
     },
     {
       type: "divider",
     },
   ];
-  const [login, setLogin] = useState(false);
+
   const [menuBar, setMenuBar] = useState(false);
-  let student = JSON.parse(localStorage.getItem("student"));
-  let student2 = useSelector((state) => state.auth.student?.result);
-  console.log("student2", student2);
-  const [profile, setProfile] = useState();
-  useEffect(() => {
-    if (student) {
-      setProfile(student);
-      setLogin(true);
-    }
-  }, []);
+
   const openBar = () => {
     if (menuBar == false) {
       setMenuBar(true);
@@ -87,30 +99,6 @@ const Header = () => {
       setMenuBar(false);
     }
   };
-  console.log(menuBar);
-  const logOut = () => {
-    setLogin(false);
-    localStorage.removeItem("student");
-  };
-  let a = (
-    <div className="loginAndRegister">
-      <Link to={"/login"}>Login</Link>/<Link to={"/register"}>Register</Link>
-    </div>
-  );
-  let b = (
-    <Dropdown
-      menu={{
-        items: profileDropdown,
-      }}
-    >
-      <a onClick={(e) => e.preventDefault()}>
-        <Space>
-          {student?.result?.username}
-          <i className="fa-solid fa-sort-down"></i>
-        </Space>
-      </a>
-    </Dropdown>
-  );
 
   return (
     <div id="header">
@@ -149,7 +137,25 @@ const Header = () => {
             <NavLink to={"/about"}>About</NavLink>
             <NavLink to={"/contact"}>Contact</NavLink>
           </nav>
-          {login ? b : a}
+          {student?.result?._id ? (
+            <Dropdown
+              menu={{
+                items: profileDropdown,
+              }}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  {student?.result?.username}
+                  <i className="fa-solid fa-sort-down"></i>
+                </Space>
+              </a>
+            </Dropdown>
+          ) : (
+            <div className="loginAndRegister">
+              <Link to={"/login"}>Login</Link>/
+              <Link to={"/register"}>Register</Link>
+            </div>
+          )}
           <i className="fa-solid fa-bars fa-2x" onClick={() => openBar()}></i>
         </div>
         <div className={menuBar ? "header-down" : "header-down-none"}>
@@ -183,9 +189,29 @@ const Header = () => {
             <NavLink to={"/about"}>About</NavLink>
             <NavLink to={"/contact"}>Contact</NavLink>
           </nav>
-          {login ? b : a}
+          {student?.result?._id ? (
+            <div>
+              <p>{student.result.username}</p>
+              <button className="logOut" onClick={showModal}>
+                Log Out
+              </button>
+            </div>
+          ) : (
+            <div className="loginAndRegister">
+              <Link to={"/login"}>Login</Link>/
+              <Link to={"/register"}>Register</Link>
+            </div>
+          )}
         </div>
       </div>
+      <Modal
+        title="Log Out"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p>Are you sure you want to log out?</p>
+      </Modal>
     </div>
   );
 };

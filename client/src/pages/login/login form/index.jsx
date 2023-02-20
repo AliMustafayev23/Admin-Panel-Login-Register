@@ -8,7 +8,6 @@ import { login } from "../../../redux/slice/authSlice";
 import { useState } from "react";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
-
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
 });
