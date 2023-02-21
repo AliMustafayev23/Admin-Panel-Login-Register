@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import "./index.scss";
@@ -21,6 +21,7 @@ const RegisterForm = () => {
   const passwordErr = () => toast.warning("Password should match");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   return (
     <div id="registerForm">
       <div className="container">

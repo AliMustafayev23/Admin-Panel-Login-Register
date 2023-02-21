@@ -145,6 +145,7 @@ const Header = () => {
             >
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
+                  <img src={student?.result?.image} className="userImage" />
                   {student?.result?.username}
                   <i className="fa-solid fa-sort-down"></i>
                 </Space>
@@ -191,6 +192,7 @@ const Header = () => {
           </nav>
           {student?.result?._id ? (
             <div>
+              <img src={student?.result?.image} className="userImage" />
               <p>{student.result.username}</p>
               <button className="logOut" onClick={showModal}>
                 Log Out
