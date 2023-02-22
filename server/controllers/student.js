@@ -34,6 +34,30 @@ export const getStudent = (req, res) => {
     }
   });
 };
+export const updateStudent = (req, res) => {
+  let id = req.params.id;
+  Student.findByIdAndUpdate(id, req.body, (err, docs) => {
+    if (!err) {
+      res.send({ message: "updated" });
+    }
+  });
+};
+export const getStudentById = (req, res) => {
+  let id = req.params.id;
+  Student.findById(id, (err, doc) => {
+    if (!err) {
+      res.send(doc);
+    }
+  });
+};
+export const deleteStudent = (req, res) => {
+  let id = req.params.id;
+  Student.findByIdAndDelete(id, (err) => {
+    if (!err) {
+      res.send({ message: "deleted" });
+    }
+  });
+};
 export const signup = async (req, res) => {
   const { username, password, email } = req.body;
   console.log(req.file);
