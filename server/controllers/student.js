@@ -59,7 +59,7 @@ export const deleteStudent = (req, res) => {
   });
 };
 export const signup = async (req, res) => {
-  const { username, password, email } = req.body;
+  const { username, password, email, age, image, gender,type } = req.body;
   console.log(req.file);
   try {
     const oldStudent = await Student.findOne({ email });
@@ -71,10 +71,10 @@ export const signup = async (req, res) => {
       email,
       password: hashedPassword,
       username: username,
-      // age: age,
-      // gender: gender,
-      images: `http://localhost:8000/${req.file.path}`,
-      image: "https://cutewallpaper.org/24/user-png/2842117751.jpg",
+      age: age,
+      gender: gender,
+      image: `http://localhost:8000/${req.file.path}`,
+      type: type,
     });
     const token = jwt.sign({ email: result.email, id: result._id }, secret, {
       expiresIn: "1h",

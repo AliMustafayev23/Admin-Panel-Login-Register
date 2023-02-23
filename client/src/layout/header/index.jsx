@@ -10,9 +10,11 @@ import { setLogout } from "../../redux/slice/authSlice";
 import { Button, Modal } from "antd";
 const Header = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { student } = useSelector((state) => ({ ...state.auth }));
   const logOut = () => {
     dispatch(setLogout());
+    navigate("/");
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -77,12 +79,28 @@ const Header = () => {
   ];
   const profileDropdown = [
     {
+      label:
+        student?.result?.type == "teacher" ? (
+          <div className="dashboardAndProfile">
+            <Link to={"/dashboard"}>Dashboard</Link>
+            <Link className="myProfile" to={`/profile/${student?.result?._id}`}>
+              My Profile
+            </Link>
+          </div>
+        ) : (
+          <Link className="myProfile" to={`/profile/${student?.result?._id}`}>
+            My Profile
+          </Link>
+        ),
+      key: "0",
+    },
+    {
       label: (
         <button className="logOut" onClick={showModal}>
           Log Out
         </button>
       ),
-      key: "0",
+      key: "1",
     },
     {
       type: "divider",
@@ -194,6 +212,7 @@ const Header = () => {
             <div>
               <img src={student?.result?.image} className="userImage" />
               <p>{student.result.username}</p>
+              <Link to={`/profile/${student?.result?._id}`}>My Profile</Link>
               <button className="logOut" onClick={showModal}>
                 Log Out
               </button>

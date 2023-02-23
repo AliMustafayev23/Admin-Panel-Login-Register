@@ -43,3 +43,12 @@ body {
   height: 30px;
   border-radius: 50%;
 }
+.myProfile {
+  padding: 20px;
+}
+.dashboardAndProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -56,3 +56,13 @@
     transform: translate(10px, 0);
   }
 }
+@media only screen and (max-width: 992px) {
+  #cards {
+    .cards {
+      flex-direction: column;
+      .card {
+        width: 80%;
+      }
+    }
+  }
+}

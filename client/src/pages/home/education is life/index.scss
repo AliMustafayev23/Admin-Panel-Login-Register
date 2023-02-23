@@ -65,3 +65,26 @@
     }
   }
 }
+@media only screen and (max-width: 992px) {
+  #education {
+    padding-bottom: 70%;
+    .education {
+      flex-direction: column;
+      .educationLeft {
+        width: 100%;
+        img {
+          width: 80%;
+          height: 30%;
+          margin-left: 5%;
+          margin-right: 5%;
+        }
+      }
+      .educationRight {
+        width: 80%;
+        .educationRightDown {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

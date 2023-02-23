@@ -10,11 +10,11 @@ const WelcomeUniversity = () => {
               Welcome to <br /> University
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A 
               quibusdam nisi eos accusantium eligendi velit deleniti nihil ad
-              <br />
+            
               deserunt rerum incidunt nulla nemo eius molestiae architecto
-              <br />
+             
               beatae asperiores doloribus animi.
             </p>
             <a className="readMore">Read More</a>

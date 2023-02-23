@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 const studentSchema = new Schema(
   {
-    image: { type: String },
     username: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: false },
     googleId: { type: String, required: false },
-    images: { type: String },
+    image: { type: String },
     id: { type: String },
     age: { type: Number },
     gender: { type: String },
+    type: { type: String },
   },
   { timestamps: true }
 );

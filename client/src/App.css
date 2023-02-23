@@ -2,7 +2,8 @@
   font-family: "Rubik", arial, sans-serif;
 }
 .logOut {
-  padding: 6px 32px;
+  padding: 10px 10px;
+  width: 100%;
   background-color: red;
   border-radius: 0.25rem;
   border-color: transparent;

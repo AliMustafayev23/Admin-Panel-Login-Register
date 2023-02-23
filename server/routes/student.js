@@ -35,6 +35,6 @@ router.get("/", getStudent);
 router.delete("/:id", deleteStudent);
 router.get("/:id", getStudentById);
 router.put("/:id", updateStudent);
-router.post("/signup", upload.single("images"), signup);
+router.post("/signup", upload.single("image"), signup);
 router.post("/signin", signin);
 export default router;

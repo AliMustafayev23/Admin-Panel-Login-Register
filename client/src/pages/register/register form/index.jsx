@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import "./index.scss";
@@ -12,16 +12,17 @@ const registerSchema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
-  // password: Yup.string().password("Invalid password").required("Required"),
-  // retypePassword: Yup.string()
-  //   .password("Invalid password")
-  //   .required("Required"),
+  age: Yup.number().required("Required"),
 });
 const RegisterForm = () => {
   const passwordErr = () => toast.warning("Password should match");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const gender = useRef();
+  const [image, setImage] = useState();
+  const imageValue = (file) => {
+    setImage(file);
+  };
   return (
     <div id="registerForm">
       <div className="container">
@@ -33,9 +34,18 @@ const RegisterForm = () => {
               username: "",
               password: "",
               retypePassword: "",
+              gender: "",
+              age: "",
+              image: "",
+              type:"",
             }}
             validationSchema={registerSchema}
             onSubmit={(values) => {
+              values.gender = gender.current.value;
+              values.image = image;
+              values.type="student";
+              console.log(values.image);
+              console.log(values);
               if (values.password !== values.retypePassword) {
                 passwordErr();
               }
@@ -66,8 +76,18 @@ const RegisterForm = () => {
                 {errors.retypePassword && touched.retypePassword ? (
                   <div>{errors.retypePassword}</div>
                 ) : null}
+                <Field name="age" type="number" />
+                {errors.age && touched.age ? <div>{errors.age}</div> : null}
+                <select name="gender" ref={gender}>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                </select>
+                <input
+                  type="file"
+                  onChange={(e) => imageValue(e.target.files[0])}
+                />
                 <button className="login" type="submit">
-                  Login
+                  Register
                 </button>
               </Form>
             )}
