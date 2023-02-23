@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDataCourse } from "../../../redux/slice/getDataCourseSlice";
+import { getDataCourse } from "../../../../redux/slice/getDataCourseSlice";
 
 import "./index.scss";
 

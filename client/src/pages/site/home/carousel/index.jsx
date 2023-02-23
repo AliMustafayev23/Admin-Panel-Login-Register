@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "better-react-carousel";
 import { useDispatch, useSelector } from "react-redux";
-import { getDataCourse } from "../../../redux/slice/getDataCourseSlice";
+import { getDataCourse } from "../../../../redux/slice/getDataCourseSlice";
 import { useEffect } from "react";
 import "./index.scss";
 const CourseCarousel = () => {

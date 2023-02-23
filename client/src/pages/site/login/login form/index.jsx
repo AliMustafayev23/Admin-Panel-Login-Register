@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../../redux/slice/authSlice";
+import { login } from "../../../../redux/slice/authSlice";
 import { useState } from "react";
 import { useEffect } from "react";
 import { toast } from "react-toastify";

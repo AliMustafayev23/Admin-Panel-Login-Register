@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import studentsLogo from "../../../assets/educationCard1.png";
-import booksLogo from "../../../assets/educationCard2.png";
-import schoolsLogo from "../../../assets/educationCard3.png";
-import graduatesLogo from "../../../assets/educationCard4.png";
+import studentsLogo from "../../../../assets/educationCard1.png";
+import booksLogo from "../../../../assets/educationCard2.png";
+import schoolsLogo from "../../../../assets/educationCard3.png";
+import graduatesLogo from "../../../../assets/educationCard4.png";
 import "./index.scss";
 const EducationIsLife = () => {
   let [students, setStudents] = useState(0);

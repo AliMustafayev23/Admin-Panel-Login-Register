@@ -5,7 +5,7 @@ import "./index.scss";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { register } from "../../../redux/slice/authSlice";
+import { register } from "../../../../redux/slice/authSlice";
 const registerSchema = Yup.object().shape({
   username: Yup.string()
     .min(2, "Too Short!")

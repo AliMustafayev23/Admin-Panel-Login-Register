@@ -6,7 +6,7 @@ import { Dropdown, Space } from "antd";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setLogout } from "../../redux/slice/authSlice";
+import { setLogout } from "../../../redux/slice/authSlice";
 import { Button, Modal } from "antd";
 const Header = () => {
   const dispatch = useDispatch();
@@ -82,7 +82,7 @@ const Header = () => {
       label:
         student?.result?.type == "teacher" ? (
           <div className="dashboardAndProfile">
-            <Link to={"/dashboard"}>Dashboard</Link>
+            <Link to={"/admin"}>Dashboard</Link>
             <Link className="myProfile" to={`/profile/${student?.result?._id}`}>
               My Profile
             </Link>

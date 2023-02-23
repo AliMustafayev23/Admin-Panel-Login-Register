@@ -4,9 +4,7 @@ const Dashboard = () => {
   return (
     <div id="dashboard">
       <div className="container">
-        <div className="dashboard">
-            
-        </div>
+        <div className="dashboard">Dashboard</div>
       </div>
     </div>
   );
