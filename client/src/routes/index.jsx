@@ -10,6 +10,8 @@ import Login from "../pages/site/login";
 import NoPage from "../pages/site/no page";
 import MyProfile from "../pages/site/profile";
 import Register from "../pages/site/register";
+import Students from "../pages/admin/students";
+import Courses from "../pages/admin/courses";
 
 const ROUTES = [
   {
@@ -50,6 +52,8 @@ const ROUTES = [
         path: "",
         element: <Dashboard />,
       },
+      { path: "students-list", element: <Students /> },
+      { path: "courses-list", element: <Courses /> },
     ],
   },
 ];

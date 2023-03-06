@@ -1,0 +1,13 @@
+#dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 85vw;
+  margin-left: 15vw;
+  .dashboard {
+    .gender {
+      display: flex;
+    }
+  }
+}

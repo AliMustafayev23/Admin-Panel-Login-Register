@@ -1,0 +1,79 @@
+#admin-header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  width: 15vw;
+  position: fixed;
+  .admin-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    column-gap: 20px;
+    padding: 30px;
+    h1 {
+      font-size: 36px;
+    }
+    .teacher {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      img {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+      }
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      row-gap: 20px;
+      a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        border-bottom: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        &.active {
+          background-color: #0093e9;
+          background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+        }
+        &:hover {
+          background-color: #0093e9;
+          background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+        }
+      }
+    }
+    .goToSite {
+      margin-top: 15%;
+      background-color: #0093e9;
+      background-image: linear-gradient(160deg, #0093e9 0%, #63beb4 100%);
+      padding: 10px;
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+      border-color: linear-gradient(160deg, #0093e9 0%, #63beb4 100%);
+      cursor: pointer;
+      &:hover {
+        border-color: white;
+        background-color: transparent;
+        background-image: linear-gradient(
+          160deg,
+          transparent 0%,
+          transparent 100%
+        );
+      }
+    }
+  }
+}
